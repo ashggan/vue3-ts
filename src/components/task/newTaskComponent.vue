@@ -1,10 +1,10 @@
 <template>
     <div class=" grid ">
         <div class=" mt-2 rounded-md shadow-sm ">
-            <input type="text" name="price" id="price" v-model="task.task"
+            <input type="text" name="price" id="price" v-model="task.title"
                 class="block w-full focus:ring-0 focus:outline-0 border-0 py-1.5 pl-7 pr-20 text-gray-900 border-b-2 border-indigo-500  placeholder:text-gray-400  sm:text-sm sm:leading-6"
                 placeholder="New Task">
-            <textarea
+            <textarea v-model="task.detail"
                 class="block w-full focus:ring-0 focus:outline-0 border-0 py-1.5 pl-7 pr-20 text-gray-900 border-b-2 border-indigo-500  placeholder:text-gray-400  sm:text-sm sm:leading-6"
                 cols="30" rows="5" placeholder="here"></textarea>
 
@@ -22,8 +22,9 @@ import type Task from '@/types/task';
 import { ref } from 'vue';
 
 const task = ref<Task>({
-    task: '',
     id: '',
+    title: '',
+    detail: '',
     done: false
 });
 
@@ -32,8 +33,9 @@ const store = useTaskStore()
 const addTask = () => {
     store.addNewTask(task.value)
     task.value = {
-        task: '',
         id: '',
+        title: '',
+        detail: '',
         done: false
     }
 }

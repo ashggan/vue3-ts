@@ -14,12 +14,15 @@ export const useTaskStore = defineStore("Tasks", {
       this.tasks.push(task);
     },
 
-    removeTask(task: Task) {
+    removeTask(id: string) {
       // tasks.splice(tasks.indexOf(task), 1)
-      this.tasks = this.tasks.filter((t) => t.id !== task.id);
+      this.tasks = this.tasks.filter((t) => t.id !== id);
     },
 
-    markDone(task: Task) {},
+    markDone(id: string) {
+      let task = this.tasks.find((t) => t.id === id);
+      if (task) task.done = !task.done;
+    },
   },
 });
 

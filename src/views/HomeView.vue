@@ -1,18 +1,15 @@
 <script setup lang="ts">
-import newTaskComponentVue from '@/components/task/newTaskComponent.vue';
-import TaskListComponet from '@/components/task/taskListComponet.vue';
+import jobListComponentVue from '@/components/job/jobListComponent.vue';
+
 
 </script>
 
 <template>
     <div class="container m-12 ">
-        <div class="grid grid-cols-2 gap-12">
-            <div class=" col m-5">
-                <newTaskComponentVue></newTaskComponentVue>
-            </div>
-            <div class="col  ">
-                <TaskListComponet></TaskListComponet>
-            </div>
+        <h1 class="text-center text-2xl font-bold capitalize">Jobs board</h1>
+
+        <div class="grid grid-cols-3 gap-12">
+            <jobListComponentVue></jobListComponentVue>
         </div>
     </div>
 </template>
