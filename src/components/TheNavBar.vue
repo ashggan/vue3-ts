@@ -8,17 +8,12 @@
                     </div>
                     <div class="hidden sm:ml-6 sm:block">
                         <div class="flex space-x-4">
-                            <a class="bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium"
-                                RouterLink="/">Home</a>
-
-                            <a class="bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium"
-                                RouterLink="/todo">todo</a>
+                            <router-link :to="{ name: 'Home' }">Home</router-link>
+                            <router-link :to="{ name: 'Todo' }">todo</router-link>
                         </div>
                     </div>
                 </div>
                 <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-                    <!-- notifications button here  -->
-                    <!-- Profile dropdown -->
                 </div>
             </div>
         </div>
